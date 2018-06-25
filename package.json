@@ -2,10 +2,10 @@
   "name": "runarweather",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node config/server.js"
+    "start": "node config/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/runaraj/runarweather/issues"
   },
-  "homepage": "https://github.com/runaraj/runarweather#readme"
+  "homepage": "https://github.com/runaraj/runarweather#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
