@@ -33,10 +33,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Selector/>
+        <Datadisplay/>
+        
         <h1>Temperature</h1>
         <div>{this.state.temperature}</div>
-        <Datadisplay/>
-        <Selector/>
       </div>
     );
   }
