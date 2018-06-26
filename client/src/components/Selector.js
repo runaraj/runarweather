@@ -21,6 +21,7 @@ class Selector extends Component {
     handleSubmit(event) {
         //get data
         console.log("Get data for: " + this.state.value);
+        
         event.preventDefault();
     }
 
@@ -40,6 +41,7 @@ class Selector extends Component {
                     </select>
                 </label>
                 <input type="submit" value="Get data"/>
+                <div>{this.state.value}</div>
             </form>
 
         );
