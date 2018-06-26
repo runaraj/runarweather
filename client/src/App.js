@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Selector from './components/Selector';
+import Datadisplay from './components/Datadisplay';
 
 class App extends Component {
   state = {users: []}
@@ -33,6 +35,8 @@ class App extends Component {
       <div className="App">
         <h1>Temperature</h1>
         <div>{this.state.temperature}</div>
+        <Datadisplay/>
+        <Selector/>
       </div>
     );
   }
