@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 //import './Selector.css';
 
 class Datadisplay extends Component {
+
+    componentDidMount() {
+        console.log("Datadisplay mounted");
+    }
     
 
     render() {

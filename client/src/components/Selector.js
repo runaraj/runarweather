@@ -12,7 +12,7 @@ class Selector extends Component {
     }
     
     componentDidMount() {
-        console.log("Selector state: " + this.state.location);
+        console.log("Selector mounted");
     }
 
     handleChange(event) {
