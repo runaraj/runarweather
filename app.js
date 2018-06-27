@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 
 var app = express();
+// var apiRouter = express.Router();
 
 /* app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -29,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
+
+// Test api route
+/* apiRouter.get('/', function(req, res) {
+    res.json({ message: 'hooray! welcome to our api!' });   
+}); */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

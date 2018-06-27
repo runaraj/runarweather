@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Selector from './components/Selector';
-import Datadisplay from './components/Datadisplay';
+
 
 class App extends Component {
   state = {users: []}
   url = "https://cors-anywhere.herokuapp.com/https://www.yr.no/place/Norway/Akershus/B%C3%A6rum/Sandvika/forecast_hour_by_hour.xml"
-  parseString = require('react-native-xml2js').parseString;
 
-  componentDidMount() {
-/*     fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users })); */
-
-
+  componentDidMount() {    
       fetch(this.url)
         .then(response => response.text())
         .then((response) => {
@@ -33,11 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Selector/>
-        <Datadisplay/>
-        
-        <h1>Temperature</h1>
-        <div>{this.state.temperature}</div>
+        <Selector/>        
       </div>
     );
   }
