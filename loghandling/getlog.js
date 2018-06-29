@@ -30,6 +30,7 @@ const download = () => {
 
 router.get('/', function(req, res, next) {
     download();
-    console.log("downloaded logs");
+    // console.log(path.join(__dirname, '../access.downloaded.log'));
+    res.sendFile(path.join(__dirname, '../access.downloaded.log'));
 });
 module.exports = router;
