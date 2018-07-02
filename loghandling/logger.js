@@ -1,7 +1,6 @@
 var path = require('path');
 var storage = require('azure-storage');
 
-// LOG STORAGE START
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').load();
   };
@@ -30,12 +29,14 @@ if (process.env.NODE_ENV !== 'production') {
             if(err) {
                 reject(err);
             } else {
+                console.log("uploading");
                 resolve({ message: `Upload of '${blobName}' complete` });
             }
         });
     });
   };
-  
-  // LOG STORAGE END
+  //Upload new blob every minute
+  setInterval(uploadBlob, 60000);
+// setInterval(uploadBlob, 30000);
 
 module.exports = uploadBlob;

@@ -20,7 +20,7 @@ router.get('/insertrandom', function(req, res, next) {
         });
         client.close();
       });
-      blobber();
+    //   blobber();
       
 });
 
@@ -44,7 +44,7 @@ router.get('/getcomment/:comment_text', function(req, res, next) {
         });
         client.close();
         });
-        blobber();
+        // blobber();
     
     // res.json({message: "getified"});
 });
@@ -59,7 +59,7 @@ router.get('/getcomments/:selected_location', function(req, res, next) {
         });
         client.close();
         });
-        blobber();
+        // blobber();
 });
 
 

@@ -12,7 +12,7 @@ var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var dbRouter = require('./routes/database');
 
-var logRouter = require('./loghandling/getlog');
+var logRouter = require('./routes/getlog');
 
 var app = express();
 // var apiRouter = express.Router();

@@ -21,6 +21,7 @@ const download = () => {
             if(err) {
                 reject(err);
             } else {
+                console.log("funkafett");
                 resolve({ message: `Download of '${blobName}' complete` });
             }
         });
@@ -28,9 +29,28 @@ const download = () => {
 };
 
 
+router.get('/left', function(req, res, next) {
+    console.log(download());
+    res.sendFile(path.join(__dirname + '/../access.downloaded.log'));
+
+    
+});
+
+// TODO make this download the logfile, then res.sendFile the downloaded file
+
 router.get('/', function(req, res, next) {
-    download();
-    // console.log(path.join(__dirname, '../access.downloaded.log'));
-    res.sendFile(path.join(__dirname, '../access.downloaded.log'));
+    const dowloadFilePath = logFilePath.replace('.log', '.downloaded.log');
+    new Promise((resolve, reject) => {
+        blobService.getBlobToLocalFile(containerName, blobName, dowloadFilePath, err => {
+            if(err) {
+                reject(err);
+            } else {
+                res.sendFile(path.join(__dirname + '/../access.downloaded.log'));
+                resolve({ message: `Download of '${blobName}' complete` });
+            }
+        });
+        
+    });
+    
 });
 module.exports = router;
